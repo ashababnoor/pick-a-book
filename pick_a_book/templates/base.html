@@ -7,10 +7,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'brand-assets/favicon.svg' %}" type="image/svg">
     <title> {% if title %} {{ title }} | {% endif %} Pick-a-Book</title>
 
 
-    <link rel="stylesheet" href="{% static 'bootstrap-5.1.1/css/bootstrap.min.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'bootstrap-5.1.1/css/bootstrap.min.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
@@ -33,6 +35,8 @@
     {% block extend_footer %}
     {% comment %} Extended footer goes here {% endcomment %}
     {% endblock extend_footer %}
+
+    <script src="{% static '' %}"></script>
 </body>
 
 </html>

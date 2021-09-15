@@ -1,10 +1,12 @@
-{% if request.user.is_authenticated %}
+{% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+
+{% load static %}
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-md">
 
     <a class="navbar-brand" href="#">
-      <img src="{% static 'brand-assets/logo-white.svg' %}" alt="PB" class="d-inline-block align-text-top">
+      <img src="{% static 'brand-assets/logo-color.svg' %}" alt="PB" class="">
       <span class="navbar-brand-text"> Pick-A-Book </span>
     </a>
 
@@ -45,6 +47,7 @@
 </nav>
 <!-- Navbar End -->
 
+{% comment %} 
 {% else %}
 
 <!-- Navbar Start -->
@@ -76,4 +79,4 @@
 </nav>
 <!-- Navbar End -->
 
-{% endif %}
+{% endif %} {% endcomment %}

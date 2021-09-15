@@ -1,0 +1,13 @@
+.navbar {
+    font-size: 1.2em;
+
+    &-brand {
+        display: flex;
+        flex-direction: row;
+
+        image {
+            height: 1.2em;
+            font-size: 1.2em;
+        }
+    }
+}

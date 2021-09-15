@@ -1,13 +1,18 @@
 .navbar {
-    font-size: 1.2em;
+    font-size: 1.25em;
 
     &-brand {
         display: flex;
         flex-direction: row;
+        font-size: 1.3em;
+        font-weight: bold;
+        align-items: flex-end;
+        justify-content: flex-end;
 
-        image {
+        img {
+            margin-top: -0.25em;
+            margin-right: 0.2em;
             height: 1.2em;
-            font-size: 1.2em;
         }
     }
 }

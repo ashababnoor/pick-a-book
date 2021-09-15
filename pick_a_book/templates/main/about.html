@@ -2,12 +2,61 @@
 
 {% load static %}
 
-{% block extend_head %}{% endblock extend_head %}
+{% block extend_head %}
+{% endblock extend_head %}
 
 {% block extend_body %}
 
-<div>
-    Hello World! This is Pick-a-Book about page!
+<div class="about-section">
+    <div class="title">
+        <div class="about-text">
+            Do more with <br> your books.
+        </div>
+    </div>
+    <div class="subtitle">
+        <h3>A peer-to-peer marketplace for buying, selling and exchanging used books.</h3>
+    </div>
 </div>
 
+<div class="background-layer">
+    <svg id="visual" 
+        viewBox="0 0 900 600" 
+        width="900" 
+        height="600" 
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        version="1.1">
+
+        <g transform="translate(428.17671757704136 283.1684550489822)">
+            <path id="blob1"
+                d="M190.9 -166.4C240.4 -141.4 268.7 -70.7 266.5 -2.2C264.2 66.2 231.5 132.5 182 171C132.5 209.5 66.2 220.2 14.1 206.1C-37.9 191.9 -75.9 152.9 -119.6 114.4C-163.2 75.9 -212.6 37.9 -221.5 -8.8C-230.3 -55.6 -198.6 -111.3 -154.9 -136.3C-111.3 -161.3 -55.6 -155.6 7.5 -163.2C70.7 -170.7 141.4 -191.4 190.9 -166.4"
+                fill="#7fbdff"></path>
+        </g>
+        <g transform="translate(439.6460080027183 298.7898556588833)" style="visibility: hidden;">
+            <path id="blob2" 
+                d="M104.2 -120.7C137.7 -70.7 169.4 -35.4 177.4 8C185.4 51.4 169.8 102.8 136.3 152.4C102.8 202.1 51.4 250 7.9 242.2C-35.6 234.3 -71.2 170.5 -100.5 120.8C-129.8 71.2 -152.9 35.6 -157.8 -4.8C-162.6 -45.3 -149.2 -90.5 -119.8 -140.5C-90.5 -190.5 -45.3 -245.3 -4.9 -240.3C35.4 -235.4 70.7 -170.7 104.2 -120.7"
+                fill="#7fbdff"></path>
+        </g>
+        <g transform="translate(427.6771324181225 269.92950646150405)" style="visibility: hidden;">
+            <path id="blob3" 
+                d="M157.4 -133.9C205.9 -108.9 248.4 -54.4 249.2 0.7C249.9 55.9 208.7 111.7 160.2 159.4C111.7 207.1 55.9 246.5 9.4 237.1C-37 227.7 -74 169.3 -108.8 121.7C-143.7 74 -176.3 37 -193.2 -16.9C-210 -70.7 -211.1 -141.4 -176.3 -166.4C-141.4 -191.4 -70.7 -170.7 -8.1 -162.6C54.4 -154.5 108.9 -158.9 157.4 -133.9"
+                fill="#7fbdff"></path>
+        </g>
+    </svg>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+<script>
+    const tween = KUTE.fromTo(
+        '#blob1',
+        { path: '#blob1' },
+        { path: '#blob2' },
+        //{ path: '#blob3' },
+        { repeat: 999, duration: 3000, yoyo: true }
+    );
+
+    tween.start();
+</script>
+
 {% endblock extend_body %}
+

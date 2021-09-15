@@ -17,7 +17,7 @@ class UserProfile(models.Model):
     longitude = models.CharField(verbose_name="Longitude",max_length=50, null=True, blank=True)
     latitude = models.CharField(verbose_name="Latitude",max_length=50, null=True, blank=True)
 
-    captcha_score = models.FloatField(default = 0.0)
+    captcha_score = models.FloatField(null=True)
     has_profile = models.BooleanField(default = False)
 
     is_active = models.BooleanField(default = True)

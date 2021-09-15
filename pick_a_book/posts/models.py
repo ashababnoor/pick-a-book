@@ -4,7 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 from users.models import UserProfile
-
+ 
 
 class Post(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
@@ -14,7 +14,7 @@ class Post(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return "User: " + self.user + " | Title: " + self.title
+        return "Title: " + self.title
 
 
 class PostImage(models.Model):
@@ -22,11 +22,11 @@ class PostImage(models.Model):
     image = models.FileField(upload_to='images/')
 
     def __str__(self):
-        return "Img for post -> " + "User: " + self.post.user + " | Title: " + self.post.title
+        return "Img for post -> Title: " + self.post.title
 
 
 class SellPost(Post):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return "Sell post ->" + super().__str__()
+        return super().__str__()

@@ -7,11 +7,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick-a-Book</title>
+    <title> {% if title %} {{ title }} | {% endif %} Pick-a-Book</title>
+
+
+    <link rel="stylesheet" href="{% static 'bootstrap-5.1.1/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    {% block extend_head %}
+    {% comment %} Extended head goes here {% endcomment %}
+    {% endblock extend_head %}
+
 </head>
 
 <body>
+    {% comment %} Importing navbar from partials {% endcomment %}
+    {% include 'partials/nav.html' %}
 
+
+    {% block extend_body %}
+    {% comment %} Extended body goes here {% endcomment %}
+    {% endblock extend_body %}
+
+
+    {% block extend_footer %}
+    {% comment %} Extended footer goes here {% endcomment %}
+    {% endblock extend_footer %}
 </body>
 
 </html>

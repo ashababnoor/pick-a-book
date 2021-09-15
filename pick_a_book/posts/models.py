@@ -12,7 +12,6 @@ class Post(models.Model):
     author = models.CharField(max_length=250)
     purchase_date = models.DateField()
     description = models.TextField()
-    image = models.FileField()
 
     def __str__(self):
         return "User: " + self.user + " | Title: " + self.title

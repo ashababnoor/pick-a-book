@@ -13,10 +13,10 @@ class UserForm(UserCreationForm):
 	Form that uses built-in UserCreationForm to handel user creation
 	'''
 	first_name = forms.CharField(max_length=30, required=True,
-		widget=forms.TextInput(attrs={'placeholder': '*Your first name'})
+		widget=forms.TextInput(attrs={'placeholder': 'Your first name', 'class':'null'})
     )
 	last_name = forms.CharField(max_length=30, required=True,
-		widget=forms.TextInput(attrs={'placeholder': '*Your last name'})
+		widget=forms.TextInput(attrs={'placeholder': 'Your last name'})
     )
 	username = forms.EmailField(max_length=254, required=True,
 		widget=forms.TextInput(attrs={'placeholder': '*Email'})

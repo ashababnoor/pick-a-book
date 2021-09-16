@@ -29,4 +29,16 @@ class SellPost(Post):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return super().__str__()
+        return super().__str__()    
+
+
+
+class PreferredBook(models.Model):
+    title = models.CharField(max_length=250)
+    author = models.CharField(max_length=250)
+    edition = models.PositiveIntegerField(blank=True)
+    publisher = models.CharField(max_length=250, blank=True)
+    
+
+class ExchangePost(Post):
+    prefered_books = models.ManyToManyField(PreferredBook, related_name='exchange_post')

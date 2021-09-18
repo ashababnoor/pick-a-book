@@ -4,7 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 from users.models import UserProfile
- 
+
 
 class Post(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
@@ -12,6 +12,9 @@ class Post(models.Model):
     author = models.CharField(max_length=250)
     purchase_date = models.DateField()
     description = models.TextField()
+
+    edition = models.PositiveIntegerField(blank=True, null=True, default=None)
+    publisher = models.CharField(max_length=250, blank=True, null=True, default=None)
 
     def __str__(self):
         return "Title: " + self.title
@@ -36,8 +39,8 @@ class SellPost(Post):
 class PreferredBook(models.Model):
     title = models.CharField(max_length=250)
     author = models.CharField(max_length=250)
-    edition = models.PositiveIntegerField(blank=True)
-    publisher = models.CharField(max_length=250, blank=True)
+    edition = models.PositiveIntegerField(blank=True, null=True, default=None)
+    publisher = models.CharField(max_length=250, blank=True, null=True, default=None)
     
 
 class ExchangePost(Post):

@@ -2,3 +2,14 @@
 @import './abstracts/mixins';
 @import './abstracts/fonts';
 
+.about {
+    height: 100vh;
+    background: url(../../media/assets/about.jpg);
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    
+}

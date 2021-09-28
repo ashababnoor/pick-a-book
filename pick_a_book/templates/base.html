@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="{% static 'brand-assets/favicon.svg' %}" type="image/svg">
     <title> {% if title %} {{ title }} | {% endif %} Pick-a-Book</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'bootstrap-4.1.3/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -35,6 +36,28 @@
         {% block extend_footer %}
         {% comment %} Extended footer goes here {% endcomment %}
         {% endblock extend_footer %}
+
+        <section class="footer">
+            <div class="footer__top">
+                <div class="footer__top__contact">
+                    <span class="footer--linegap">
+                        Contact us!
+                    </span>
+                    <br>
+                    <a href="http://github.com/ashababnoor/pick-a-book" target="_blank" rel="noopener noreferrer"> <i class="bi bi-github"></i> </a>
+                    <a href=""> <i class="bi bi-facebook"></i> </a>
+                    <a href=""> <i class="bi bi-linkedin"></i> </a>
+                </div>
+
+                <div class="footer__top__about">
+                    <img src="{% static 'brand-assets/logo-white.svg' %}" alt="" srcset="">
+                    Pick-a-Book
+                </div>
+            </div>
+            <div class="footer__bottom">
+                Copyright &copy; 2021 | Pick-a-Book
+            </div>
+        </section>
     </footer>
 
     <!-- JavaScript dependencies -->

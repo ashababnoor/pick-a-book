@@ -1,28 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extend_head %}{% endblock extend_head %}
+
+{% block extend_body %}
+
+<div class="sell-posts__container">
+    <h2 class="section-title">Add Sell Post</h2>
+
     <form method="post" action="{% url 'posts:addSellPost' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required><br><br>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" required><br><br>
-        <label for="purchase_date">Purchase date:</label>
-        <input type="date" id="purchase_date" name="purchase_date" required><br><br>
-        <label for="edition">Edition:</label>
-        <input type="number" id="edition" name="edition" min="1"><br><br>
-        <label for="publisher">Publisher:</label>
-        <input type="text" id="publishser" name="publisher"><br><br>
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price"><br><br>
-        <input required id="images" name = "images" type="file" multiple><br><br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title of the book" required>
+        </div>
+
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input class="form-control" type="text" id="author" name="author" placeholder="Author of the book" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" placeholder="Current condition's description" rows="5" required></textarea>            
+        </div>
+
+        <div class="form-group">
+            <label for="purchase_date">Purchase Date</label>
+            <input class="form-control" type="date" id="purchase_date" name="purchase_date" placeholder="Purchase date of the book" required>
+        </div>
+
+        <div class="form-group">
+            <label for="edition">Edition</label>
+            <input class="form-control" type="number" id="edition" name="edition" placeholder="Edition of the book" min="1">
+        </div>
+
+        <div class="form-group">
+            <label for="publisher">Publisher</label>
+            <input class="form-control" type="text" id="publisher" name="publisher" placeholder="Publisher of the book">
+        </div>
+        
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input class="form-control" type="number" step="0.01" id="price" name="price" placeholder="Price of the book" min="0">
+        </div>
+        
+        {% comment %} <div class="form-group">
+            <label for="images">Images</label>
+            <input class="form-control" type="file" id="images" name="images" placeholder="Price of the book" multiple required>
+        </div> {% endcomment %}
+        
+
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input"  id="images" name="images" multiple required>
+                <label class="custom-file-label" for="customFile">Choose images files</label>
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-gradient" value="Submit">
+        </div>
+        
+    </form>    
+    
+</div>
+
+
+
+{% endblock extend_body %}

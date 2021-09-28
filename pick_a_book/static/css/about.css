@@ -11,7 +11,7 @@ body::after {
   z-index: -1;
   background: #007BFF;
   mix-blend-mode: multiply;
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .navbar {
@@ -54,5 +54,47 @@ body::after {
 }
 
 .about__subtitle {
+  margin-top: -1em;
   color: white;
+}
+
+.about__subtitle h3 {
+  font-size: 1.5em;
+}
+
+.about__icons {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__icon {
+  width: 8em;
+  height: 8em;
+  padding: 2em;
+  background: white;
+  opacity: 0.8;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__icon img {
+  height: 4em;
+  color: red;
 }

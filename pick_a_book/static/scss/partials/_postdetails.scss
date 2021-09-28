@@ -1,0 +1,14 @@
+.post__container {
+    @include main-section;
+
+    .card {
+        .carousel {
+            &-item {
+                img {
+                    height: 20em;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

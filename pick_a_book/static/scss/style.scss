@@ -4,3 +4,26 @@
 @import './partials/reset';
 @import './partials/nav';
 @import './partials/footer';
+
+@import './partials/sellposts';
+@import './partials/postdetails';
+
+
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    @include gradient-background;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-gradient {
+    @include gradient-background;
+    color: white;
+    overflow: hidden;
+    padding: 0.4em 1.2em;
+}

@@ -6,13 +6,13 @@
 
 {% block extend_body %}
 
-<div class="container">
-    <h2>Sell Posts</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="sell-posts__container">
+    <h2 class="section-title">Available Books</h2>
+
+    <div class="card-deck">
     {% for sellpost in latest_sell_posts %}
-        <div class="col">
-            <div class="card">
-            <img src="{{ sellpost.postimage_set.first.image.url }}" alt="">
+        <div class="card">
+            <img src="{{ sellpost.postimage_set.first.image.url }}" alt="" class="card-image-top">
             <div class="card-body">
                 <h5 class="card-title"> {{ sellpost.title }} </h5>
                 <h6 class="card-subtitle mb-2 text-muted"> {{ sellpost.author }} </h6>
@@ -20,8 +20,7 @@
                 <h5 class="card-title"> Price: {{ sellpost.price }} </h5>
             </div>
             <div class="card-footer">
-            <button class="btn btn-primary" onclick="location.href='{% url 'posts:detail' sellpost.id %}'"> Explore </button>
-            </div>
+                <button class="btn btn-primary" onclick="location.href='{% url 'posts:detail' sellpost.id %}'"> Explore </button>
             </div>
         </div>
     {% endfor %}

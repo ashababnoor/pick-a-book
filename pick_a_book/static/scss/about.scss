@@ -14,7 +14,7 @@ body {
         //@include gradient-background;
         background: $primary-blue;
         mix-blend-mode: multiply;
-        opacity: 0.45;
+        opacity: 0.5;
     }
 }
 
@@ -49,6 +49,36 @@ body {
     }
 
     &__subtitle {
+        margin-top: -1em;
         color: white;
+
+        h3 {
+            font-size: 1.5em;
+        }
+    }
+
+    &__icons{
+        margin-top: 1em;
+        display: flex;
+        gap: 3em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 8em;
+        height: 8em;
+        padding: 2em;
+        background: white;
+        opacity: 0.8;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 4em;
+            color: red;
+        }
     }
 }

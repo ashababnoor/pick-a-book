@@ -1,0 +1,13 @@
+.sell-posts__container {
+    margin: 2em auto 4em;
+    width: 60em;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .card img {
+        height: 10em;
+        object-fit: cover;
+    }
+}

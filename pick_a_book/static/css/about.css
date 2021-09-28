@@ -96,10 +96,18 @@
   font-style: normal;
 }
 
-.about {
-  height: 100vh;
+body {
   background: url(../../media/assets/about.jpg);
   background-size: cover;
+  isolation: isolate;
+}
+
+nav {
+  z-index: 2;
+}
+
+.about {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,5 +115,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 3em;
+  position: relative;
+}
+
+.about__title {
+  text-align: center;
+  color: white;
+}
+
+.about__title h1 {
+  line-height: 0.9;
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #007BFF;
+  mix-blend-mode: multiply;
 }

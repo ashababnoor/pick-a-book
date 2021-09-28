@@ -2,14 +2,43 @@
 @import './abstracts/mixins';
 @import './abstracts/fonts';
 
-.about {
-    height: 100vh;
+body {
     background: url(../../media/assets/about.jpg);
     background-size: cover;
+    isolation: isolate;
+}
+
+nav{
+    z-index: 2;
+}
+
+.about {
+    height: 100%;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 3em;
+    position: relative;
 
-    
+    &__title {
+        text-align: center;
+        color: white;
+        
+        h1 {
+            line-height: 0.9;
+            font-size: 6rem;
+            font-weight: 700;
+        }
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: $primary-blue;
+        mix-blend-mode: multiply;
+    }
 }

@@ -166,12 +166,11 @@
 }
 
 .about-section .title .about-text {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-style: normal;
   padding: 1em;
   font-size: 5.6em;
-  font-weight: bolder;
   line-height: 0.9;
   text-align: center;
   background-image: -webkit-gradient(linear, left top, right top, from(#007BFF), to(#6610F2));

@@ -30,6 +30,16 @@
             font-weight: 500;
             justify-content: center;
             align-items: center;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+
+                &:hover{
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
             
             img {
                 height: 1.35em;

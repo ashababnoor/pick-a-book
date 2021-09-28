@@ -1,0 +1,33 @@
+{% comment %} {% if request.user.is_authenticated %} {% endcomment %} 
+
+{% load static %}
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-md">
+    <a href="{% url 'main:home' %}" class="navbar-brand"> 
+        <img src={% static 'brand-assets/logo-color.svg' %} alt="" class="navbar-brand-image"> 
+        Pick-a-Book
+    </a>
+
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="" class="nav-link"> FAQ </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link"> Sign Up </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link"> Log In </a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link"> Admin </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Navbar End -->

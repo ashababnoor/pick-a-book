@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Pick-a-Book</title>
-</head>
+{% load static %}
 
-<body>
-    Pick-a-Book Home
-</body>
+{% block extend_head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock extend_head %}
 
-</html>
+{% block extend_body %}
+
+<section class="home">
+    <div class="home__search-container">
+        <div class="home__title">
+            <img src="{% static 'brand-assets/logo-color.svg' %}" alt="">
+            <h1 class="home--name"> Pick-a-Book</h1>
+        </div>
+        <div class="home__search">
+            <div class="search-box">
+                <input type="text" placeholder="Search for books or blogs">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock extend_body %}
+

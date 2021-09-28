@@ -1,6 +1,5 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
-@import './abstracts/fonts';
 
 body {
     background: url(../../media/assets/about.jpg);
@@ -15,12 +14,16 @@ body {
         //@include gradient-background;
         background: $primary-blue;
         mix-blend-mode: multiply;
-        opacity: 0.55;
+        opacity: 0.45;
     }
 }
 
-nav{
+.navbar{
     z-index: 2;
+
+    li a:hover {
+        color: $primary-blue;
+    }
 }
 
 .about {

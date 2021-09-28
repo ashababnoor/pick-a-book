@@ -4,7 +4,7 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-md">
-    <a href="" class="navbar-brand"> 
+    <a href="{% url 'main:home' %}" class="navbar-brand"> 
         <img src={% static 'brand-assets/logo-color.svg' %} alt="" class="navbar-brand-image"> 
         Pick-a-Book
     </a>
@@ -16,38 +16,31 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="" class="nav-link"> Recommendations </a>
+                <a href="" class="nav-link"> Blog </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link"> Recipe </a>
+                <a href="{% url 'posts:index' %}" class="nav-link"> Buy </a>
             </li>
             <li class="nav-item dropdown">
-                <a href="" class="nav-link dropdown-toggle" id="navbarDropDownForNutrition" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Nutrition
+                <a href="{% url 'posts:addSellPost' %}" class="nav-link dropdown-toggle" id="navbarDropDownForNutrition" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sell
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownForAccount">
-                    <a href="" class="dropdown-item"> BMI Calculator </a>
-                    <a href="" class="dropdown-item"> Calorie Counter </a>
-                    <a href="" class="dropdown-item"> Nutrition Chart </a>
+                    <a href="" class="dropdown-item"> Add Sell Post </a>
                 </div>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link"> Plans </a>
+                <a href="" class="nav-link"> Exchange </a>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link"> FAQ </a>
             </li>
             <li class="nav-item dropdown">
                 <a href="" class="nav-link dropdown-toggle" id="navbarDropDownForAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Your Account
+                    Account
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownForAccount">
                     <a href="" class="dropdown-item"> Settings </a>
-                    <a href="" class="dropdown-item"> Wishlist </a>
-                    <a href="" class="dropdown-item"> Meal Planner </a>
-                    <a href="" class="dropdown-item"> Order History </a>
-                    <a href="" class="dropdown-item"> Delivery Tracker </a>
-                    <a href="" class="dropdown-item disable"> Suport </a>
                     <div class="dropdown-divider"></div>
                     <a href="" class="dropdown-item"> Log Out </a>
                 </div>

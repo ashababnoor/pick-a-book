@@ -70,6 +70,20 @@
 }
 
 @font-face {
+    font-family: 'Roboto';
+    src: url(../../assets/fonts/Roboto-Black-webfont.woff);
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../../assets/fonts/Roboto-BlackItalic-webfont.woff);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
     font-family: 'Roboto Slab';
     src: url(../../assets/fonts/RobotoSlab-Regular-webfont.woff);
     font-weight: 400;

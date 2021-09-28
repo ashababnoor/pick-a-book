@@ -1,3 +1,87 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Light-webfont.woff);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-LightItalic-webfont.woff);
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Regular-webfont.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Italic-webfont.woff);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Medium-webfont.woff);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-MediumItalic-webfont.woff);
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Medium-webfont.woff);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-MediumItalic-webfont.woff);
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Bold-webfont.woff);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-BoldItalic-webfont.woff);
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url(../../assets/fonts/RobotoSlab-Regular-webfont.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url(../../assets/fonts/RobotoSlab-Bold-webfont.woff);
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +90,7 @@
 }
 
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
@@ -68,6 +152,9 @@
 }
 
 .about-section .title .about-text {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+  font-style: normal;
   padding: 1em;
   font-size: 5.6em;
   font-weight: bolder;

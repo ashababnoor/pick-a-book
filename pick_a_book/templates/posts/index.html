@@ -20,7 +20,7 @@
                 <h5 class="card-title"> Price: {{ sellpost.price }} </h5>
             </div>
             <div class="card-footer">
-                <button class="btn btn-primary" onclick="location.href='{% url 'posts:detail' sellpost.id %}'"> Explore </button>
+                <button class="btn btn-gradient" onclick="location.href='{% url 'posts:detail' sellpost.id %}'"> Explore </button>
             </div>
         </div>
     {% endfor %}

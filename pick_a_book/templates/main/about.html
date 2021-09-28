@@ -3,22 +3,22 @@
 {% load static %}
 
 {% block extend_head %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock extend_head %}
 
 {% block extend_body %}
 
-<div class="about-section">
-    <div class="title">
-        <div class="about-text">
-            Do more with <br> your used books.
-        </div>
+<section class="about">
+    <div class="about__title">
+        <h1> Do more with </h1>
+        <h1> your used books.</h1>
     </div>
-    <div class="subtitle">
+    <div class="about__subtite">
         <h3>A peer-to-peer marketplace for buying, selling and exchanging used books.</h3>
     </div>
-</div>
+</section>
 
-<div class="background-layer">
+{% comment %} <div class="background-layer">
     <svg id="visual" 
         viewBox="0 0 900 600" 
         width="900" 
@@ -56,7 +56,7 @@
     );
 
     tween.start();
-</script>
+</script> {% endcomment %}
 
 {% endblock extend_body %}
 

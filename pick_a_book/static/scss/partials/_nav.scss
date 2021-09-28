@@ -1,18 +1,57 @@
 .navbar {
-    font-size: 1.25em;
+    min-width: 100%;
+    font-size: 1.1em;
+    color: #222;
+    padding-top: 0.5em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 0.5em;
+    background: rgba($color: #fff, $alpha: 0.5);
+    box-shadow: 0px 2px 1em grey;
 
     &-brand {
         display: flex;
         flex-direction: row;
-        font-size: 1.3em;
+        font-size: 1.2em;
         font-weight: bold;
-        align-items: flex-end;
+        align-items: center;
         justify-content: flex-end;
+        color: #111;
 
         img {
-            margin-top: -0.25em;
-            margin-right: 0.2em;
             height: 1.2em;
+            margin-right: 0.3em;
         }
     }
+
+    li {
+        padding-left: 0.8em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+
+        a {
+            color: #222;
+
+            &:hover {
+                color: #888;
+                border-bottom: 2px solid $primary-gradient;
+            }
+        }
+    }
+}
+
+#nav-text {
+    font-family: var(--font-roboto-slab);
+    font-weight: 900;
+    font-size: 1.6em;
+    color: var(--clr-primary-900);
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus {
+    border: none;
 }

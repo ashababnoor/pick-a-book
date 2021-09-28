@@ -108,7 +108,16 @@
 }
 
 .navbar {
-  font-size: 1.25em;
+  min-width: 100%;
+  font-size: 1.1em;
+  color: #222;
+  padding-top: 0.5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-bottom: 0.5em;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0px 2px 1em grey;
+          box-shadow: 0px 2px 1em grey;
 }
 
 .navbar-brand {
@@ -119,24 +128,55 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  color: #111;
 }
 
 .navbar-brand img {
-  margin-top: -0.25em;
-  margin-right: 0.2em;
   height: 1.2em;
+  margin-right: 0.3em;
+}
+
+.navbar li {
+  padding-left: 0.8em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.navbar li a {
+  color: #222;
+}
+
+.navbar li a:hover {
+  color: #888;
+  border-bottom: 2px solid linear-gradient(90deg, #007BFF, #6610F2);
+}
+
+#nav-text {
+  font-family: var(--font-roboto-slab);
+  font-weight: 900;
+  font-size: 1.6em;
+  color: var(--clr-primary-900);
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus {
+  border: none;
 }
 
 .about-section {
-  height: 70vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,6 +190,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: url(../../../media/assets/about.jpg);
+  background-size: cover;
 }
 
 .about-section .title {

@@ -3,77 +3,39 @@
 {% load static %}
 
 <!-- Navbar Start -->
-
-{% comment %} <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="d-flex flex-grow-1">
-        <span class="w-100 d-lg-none d-block"> <!-- hidden spacer to center brand on mobile --> </span>
-        <a class="navbar-brand ms-5 d-none d-lg-inline-block" href="{% url 'main:about' %}">
-            <img src="{% static 'brand-assets/logo-color.svg' %}" alt=""> Pick-a-Book
-        </a>
-        <div class="w-100 text-right">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-    <div class="collapse navbar-collapse me-5 flex-grow-1 text-right" id="myNavbar">
-        <ul class="navbar-nav ms-auto flex-nowrap">
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item nav-active">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'posts:index' %}" class="nav-link m-2 menu-item">Buy</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Sell</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Exchange</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">FAQ</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Account</a>
-            </li>
-        </ul>
-    </div>
-</nav> {% endcomment %}
-
-<!-- Navbar End -->
-
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a href="home.php" class="navbar-brand"> 
+<nav class="navbar navbar-expand-md">
+    <a href="" class="navbar-brand"> 
         <img src={% static 'brand-assets/logo-color.svg' %} alt="Pick-a-Book" class="navbar-brand-image"> 
         Pick-a-Book
     </a>
+
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="recommendationsPage.php" class="nav-link"> Recommendations </a>
+                <a href="" class="nav-link"> Recommendations </a>
             </li>
             <li class="nav-item">
-                <a href="recipeSearchPage.php" class="nav-link"> Recipe </a>
+                <a href="" class="nav-link"> Recipe </a>
             </li>
             <li class="nav-item dropdown">
                 <a href="" class="nav-link dropdown-toggle" id="navbarDropDownForNutrition" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Nutrition
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownForAccount">
-                    <a href="bmiCalculator.php" class="dropdown-item"> BMI Calculator </a>
-                    <a href="calorieCounter.php" class="dropdown-item"> Calorie Counter </a>
-                    <a href="ingredientSearchPage.php" class="dropdown-item"> Nutrition Chart </a>
+                    <a href="" class="dropdown-item"> BMI Calculator </a>
+                    <a href="" class="dropdown-item"> Calorie Counter </a>
+                    <a href="" class="dropdown-item"> Nutrition Chart </a>
                 </div>
             </li>
             <li class="nav-item">
-                <a href="plans.php" class="nav-link"> Plans </a>
+                <a href="" class="nav-link"> Plans </a>
             </li>
             <li class="nav-item">
-                <a href="faq.php" class="nav-link"> FAQ </a>
+                <a href="" class="nav-link"> FAQ </a>
             </li>
             <li class="nav-item dropdown">
                 <a href="" class="nav-link dropdown-toggle" id="navbarDropDownForAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,13 +43,13 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownForAccount">
                     <a href="" class="dropdown-item"> Settings </a>
-                    <a href="wishlist.php" class="dropdown-item"> Wishlist </a>
+                    <a href="" class="dropdown-item"> Wishlist </a>
                     <a href="" class="dropdown-item"> Meal Planner </a>
                     <a href="" class="dropdown-item"> Order History </a>
                     <a href="" class="dropdown-item"> Delivery Tracker </a>
                     <a href="" class="dropdown-item disable"> Suport </a>
                     <div class="dropdown-divider"></div>
-                    <a href="logoutProcess.php" class="dropdown-item"> Log Out </a>
+                    <a href="" class="dropdown-item"> Log Out </a>
                 </div>
             </li>
         </ul>

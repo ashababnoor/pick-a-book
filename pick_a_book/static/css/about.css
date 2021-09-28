@@ -102,12 +102,22 @@ body {
   isolation: isolate;
 }
 
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #007BFF;
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+}
+
 nav {
   z-index: 2;
 }
 
 .about {
-  height: 100%;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,13 +144,9 @@ nav {
   line-height: 0.9;
   font-size: 6rem;
   font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.about::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: #007BFF;
-  mix-blend-mode: multiply;
+.about__subtitle {
+  color: white;
 }

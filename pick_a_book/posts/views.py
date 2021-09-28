@@ -1,5 +1,5 @@
 from django.http.response import Http404
-from django.shortcuts import get_object_or_404, render, get_list_or_404
+from django.shortcuts import get_object_or_404, render, get_list_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import SellPost
 from django.template import context, loader
@@ -86,6 +86,37 @@ class DetailView(generic.DetailView):
         Excludes any questions that aren't published yet.
         """
         return SellPost.objects.all()
+
+def addSellPost(request):
+    print('in addExchangePost')
+    if(request.method=='POST'):
+        user = request.user
+        images = request.FILES.getlist('images')
+        print(request.FILES)
+        print(images)
+        title = request.POST.get('title')
+        author= request.POST.get('author')
+        purchase= request.POST.get('purchase_date')
+        des= request.POST.get('description')
+        edi=0
+        publisher=''
+        if request.POST.get('edition')!='':
+            edi=request.POST.get('edition')
+        if request.POST.get('publisher')!='':
+            publisher = str(request.POST.get('publisher'))
+        prefbooks=request.POST.get('prefered_books')
+        print(purchase)
+
+        exchangepost_obj = SellPost.objects.create(
+            user=user,title=title,author=author,purchase_date=purchase,description=des,edition=edi,publisher=publisher,prefered_books=prefbooks,
+        )
+        for img in images:
+            img_obj=SellPost.objects.create(post=exchangepost_obj,image=img)
+            print(img_obj)
+        return redirect('posts')
+
+    return render(request,'posts/addSellPost.html')
+
 
 
 

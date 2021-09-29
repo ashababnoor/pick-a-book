@@ -1,0 +1,76 @@
+{% comment %} {% extends 'base.html' %}
+
+{% load static %}
+
+{% block extend_body %}
+
+<section class="library-container">
+
+    <form method="post">{% csrf_token %}</form>
+    <label for="fname">Enter radius distance in km:</label>
+    <input type="text" id="kmDis" name="kmDis"><br><br>
+    <button class="coordinates">Find Nearby Libraries</button>
+    
+    <div class="librarylist">
+
+    </div>
+
+</section>
+
+{% endblock extend_body %}
+
+{% block extend_footer %}
+
+<script src="{% static 'js/users/jquery-3.6.0.min.js' %}" ></script>
+<script>
+    $('.coordinates').click(function (){
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+
+                    let token = $("input[name='csrfmiddlewaretoken']").val();
+                    let x=$('#kmDis').val()
+
+                    $.ajax({
+                        url: "{% url "library:location_processing" %}",
+                        type: "POST",
+                        data: {
+                            csrfmiddlewaretoken: token,
+                            lo: position.coords.longitude,
+                            la: position.coords.latitude,
+                            dis: x
+                        },
+                        success: function(data) {
+                                $(".librarylist").html(data);
+                        }
+                    });
+
+                },
+                function(error) {
+                    if (error.code == error.PERMISSION_DENIED)
+                        console.log("you denied me :-(");
+                    $(".librarylist").html("<p>Allow location access to see nearby libraries. Go to <code>Settings</code> > <code>Site Settings</code> > <code>Locations</code> to give location access to the website</p>");
+                    });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    );
+</script>
+
+{% endblock extend_footer %}
+ {% endcomment %}
+
+
+ <table>
+    <tr>
+        <th>Library Name</th>
+        <th></th>
+    </tr>
+    {% for lib in libraries %}
+    <tr>
+        <td>{{ lib.name }}</td>
+        <td><a href="{% url 'library:library_details' id=lib.id %}">Visit Page</a></td>
+    </tr>
+    {% endfor %}
+</table>

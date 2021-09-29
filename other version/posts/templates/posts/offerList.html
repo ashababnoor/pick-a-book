@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Offer List</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <th>Exchange Post</th>
+        <th>Action</th>
+    </tr>
+    {% for ex in expost %}
+        <tr>
+            <td>{{ ex.title }}</td>
+            <td><a href="{% url 'posts:sendOffer' id=id offeredid=ex.id %}">Offer</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

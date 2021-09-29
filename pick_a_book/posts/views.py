@@ -1,7 +1,7 @@
 from django.http.response import Http404
 from django.shortcuts import get_object_or_404, render, get_list_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import SellPost
+from .models import PostImage, SellPost
 from django.template import context, loader
 from django.urls import reverse
 from django.views import generic
@@ -73,8 +73,7 @@ class IndexView(generic.ListView):
         Return the last five published questions (not including those set to be
         published in the future).
         """
-        return SellPost.objects.all()[:5]
-
+        return SellPost.objects.all().reverse()[:15]
 
 
 class DetailView(generic.DetailView):
@@ -104,16 +103,16 @@ def addSellPost(request):
             edi=request.POST.get('edition')
         if request.POST.get('publisher')!='':
             publisher = str(request.POST.get('publisher'))
-        prefbooks=request.POST.get('prefered_books')
+        price=request.POST.get('price')
         print(purchase)
 
-        exchangepost_obj = SellPost.objects.create(
-            user=user,title=title,author=author,purchase_date=purchase,description=des,edition=edi,publisher=publisher,prefered_books=prefbooks,
+        sellpost_obj = SellPost.objects.create(
+            user=user,title=title,author=author,purchase_date=purchase,description=des,edition=edi,publisher=publisher,price=price,
         )
         for img in images:
-            img_obj=SellPost.objects.create(post=exchangepost_obj,image=img)
+            img_obj=PostImage.objects.create(post=sellpost_obj,image=img)
             print(img_obj)
-        return redirect('posts')
+        return redirect('/')
 
     return render(request,'posts/addSellPost.html')
 

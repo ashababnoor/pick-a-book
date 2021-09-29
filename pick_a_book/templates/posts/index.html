@@ -9,7 +9,7 @@
 <div class="sell-posts__container">
     <h2 class="section-title">Available Books</h2>
 
-    <div class="card-deck">
+    <div class="card-columns">
     {% for sellpost in latest_sell_posts %}
         <div class="card">
             <img src="{{ sellpost.postimage_set.first.image.url }}" alt="" class="card-image-top">

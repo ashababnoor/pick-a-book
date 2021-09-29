@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'brand-assets/favicon.svg' %}" type="image/svg">
+    <title> {% if title %} {{ title }} | {% endif %} Pick-a-Book</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'bootstrap-4.1.3/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extend_head %}
+    {% comment %} Extended head goes here {% endcomment %}
+    {% endblock extend_head %}
+</head>
+
+<body>
+    <header>
+        {% comment %} Importing navbar from partials {% endcomment %}
+        {% include 'partials/nav-login.html' %}
+    </header>
+
+    <main>
+        {% block extend_body %}
+        {% comment %} Extended body goes here {% endcomment %}
+        {% endblock extend_body %}
+    </main>
+
+    <footer>
+        {% include 'partials/footer.html' %}
+    </footer>
+    
+    {% block extend_footer %}
+        {% comment %} Extended footer goes here {% endcomment %}
+    {% endblock extend_footer %}
+
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="{% static 'bootstrap-4.1.3/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

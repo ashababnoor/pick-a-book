@@ -1,45 +1,71 @@
-{% extends 'base.html' %}
+{% extends 'base-guest.html' %}
 
 <!-- Loading from static -->
 {% load static %}
 
 <!-- Head block -->
 {% block extend_head %}
-
-<script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
-
+    <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
 
 
 <!-- Content block -->
 {% block extend_body %}
 
-<h3>Pick-a-Book | Sign Up</h3>
+<section class="sign-up__container">
+    <div class="sign-up__container__form">
+        <h3 class="section-title">Pick-a-Book | Sign Up</h3>
 
-<div class="container">
+        <form id="signupform" method="POST" action="/user/sign-up" enctype="multipart/form-data">
+            {% csrf_token %}
 
-    <form id="signupform" method="POST" action="/sign-up">
-        {% csrf_token %}
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"for="first_name">First Name</label>
+                <div class="col-sm-9">
+                    {{form.first_name}}
+                </div>
+            </div>
 
-        <label for="first_name">First Name</label> {{form.first_name}}
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"for="last_name">Last Name</label>
+                <div class="col-sm-9">
+                    {{form.last_name}}
+                </div>
+            </div>
 
-        <label for="last_name">Last Name</label> {{form.last_name}}
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"for="username">Username</label>
+                <div class="col-sm-9">
+                    {{form.username}}
+                </div>
+            </div>
 
-        <label for="username">Username</label> {{form.username}}
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"for="password1">Password</label>
+                <div class="col-sm-9">
+                    {{form.password1}}
+                </div>
+            </div>
 
-        <label for="password1">Password</label> {{form.password1}}
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"for="password2">Confirm Password</label>
+                <div class="col-sm-9">
+                    {{form.password2}} {{form.token}}
+                </div>
+            </div>
 
-        <label for="password2">Confirm Password</label> {{form.password2}} {{form.token}}
+            {% comment %} <label class="col-sm-3 col-form-label"class="check-container">Show Passwords
+                <input type="checkbox" onclick="showPword()">
+                <span class="checkmark"></span>
+            </label> {% endcomment %}
 
-        <label class="check-container">Show Passwords
-            <input type="checkbox" onclick="showPword()">
-            <span class="checkmark"></span>
-        </label>
+            <br>
+            <button type="submit" class="btn float-right btn-gradient">Sign up</button>
+        </form>
+    </div>
 
-        <button type="submit">Sign up</button>
-
-    </form>
-</div>
+</section>
 
 {% endblock %}
 

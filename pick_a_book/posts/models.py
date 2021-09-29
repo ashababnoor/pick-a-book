@@ -3,11 +3,12 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib import admin
-from users.models import UserProfile
+from users.models import Profile
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=250)
     author = models.CharField(max_length=250)
     purchase_date = models.DateField()

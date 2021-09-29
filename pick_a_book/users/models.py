@@ -1,26 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from froala_editor.fields import FroalaField
+from .helpers import *
+from django.urls import reverse
 
 
-class UserProfile(models.Model):
-    '''
-    Our UserProfile model extends the built-in Django User Model
-    '''
-    timestamp = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    address = models.CharField(verbose_name="Address",max_length=100, null=True, blank=True)
-    city = models.CharField(verbose_name="Town/City",max_length=100, null=True, blank=True)
-    post_code = models.CharField(verbose_name="Post Code",max_length=8, null=True, blank=True)
-    country = models.CharField(verbose_name="Country",max_length=100, null=True, blank=True)
-    longitude = models.CharField(verbose_name="Longitude",max_length=50, null=True, blank=True)
-    latitude = models.CharField(verbose_name="Latitude",max_length=50, null=True, blank=True)
-
-    captcha_score = models.FloatField(null=True)
-    has_profile = models.BooleanField(default = False)
-
-    is_active = models.BooleanField(default = True)
-
-    def __str__(self):
-        return f'{self.user}'
+class Profile(models.Model):
+    user = models.ForeignKey(User , on_delete=models.CASCADE)
+    is_verified = models.BooleanField(default=False)
+    token = models.CharField(max_length=100)
+    

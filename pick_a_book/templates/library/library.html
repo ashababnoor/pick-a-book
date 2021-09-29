@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extend %}{% endblock extend %}
+
+{% block extend_body %}
+
+<section class="library-container">
+
+    <h3 class="section-title">Library Details</h3>
+
+    <div>
+        {% for lib in library %}
+            <iframe src="https://maps.google.com/maps?q={{ lib.latitude }}, {{ lib.longitude }}&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
+            <p>Name: {{ lib.name }}</p>
+            <p>Address: {{ lib.address }}</p>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock extend_body %}
+
+{% block extend_footer %}{% endblock extend_footer %}
+
+
+
+

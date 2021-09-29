@@ -8,6 +8,10 @@
 @import './partials/sellposts';
 @import './partials/postdetails';
 
+@import './partials/signup';
+@import './partials/library';
+
+
 
 .section-title {
     font-size: 2em;
@@ -26,4 +30,8 @@
     color: white;
     overflow: hidden;
     padding: 0.3em 1.1em;
+}
+
+.card-columns {
+   column-count: 3;
 }

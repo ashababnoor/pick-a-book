@@ -12,3 +12,9 @@ def about(request):
     context = {}
 
     return render(request, 'main/about.html', context)
+
+
+def faq(request):
+    context = {}
+
+    return render(request, 'main/faq.html', context)

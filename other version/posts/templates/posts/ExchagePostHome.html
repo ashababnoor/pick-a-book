@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange posts</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <a href="{% url 'posts:addExchangePost' %}">Add an exchange post</a><a href="{% url 'posts:myExPostList' %}">My exchange posts</a><br>
+{% else %}
+    <h1>You need to be logged in to add exchange posts</h1><br>
+{% endif %}
+{% for ex in exposts %}
+    <tr>
+        <td><img src='{{ ex.1.image.url }}'></td>
+        <td>{{ ex.0.title }}</td>
+        <td>{{ ex.0.author }}</td>
+        <td><a href="{% url 'posts:exchangePostView' id=ex.0.id %}">View post</a></td>
+        <!--<td>add link to post here</td>-->
+    </tr>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% extends "base-guest.html" %} 
+
+{% load static %}
+
+{% block extend_body %}
+
+<section class="registration">
+    <div class="registration__form">
+        <div class="registration__form__container">
+            <h3 class="section-title">Register</h3>
+
+            <div class="form-validate">
+                <div class="form-group mt-5">
+                    <label class="form-label" for="loginUsername"> Email Address</label>
+                    <input class="form-control" name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" autocomplete="off" required data-msg="Please enter your email">
+                </div>
+
+                <div class="form-group mb-5">
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label" for="loginPassword"> Password</label>
+                        </div>
+                    </div>
+                    <input class="form-control" name="loginPassword" id="loginPassword" placeholder="Password" type="password" required data-msg="Please enter your password">
+                </div>
+
+                <button class="btn btn-lg btn-block btn-gradient" onclick="register()">Sign up</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="registration__img">
+        <div class="" style="background-image: url(https://images.pexels.com/photos/1995730/pexels-photo-1995730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"></div>
+    </div>
+</section>
+
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+<!--Register-->
+{% comment %}
+
+<div class="container py-5">
+    <h1>Register</h1>
+    <form method="POST">
+        {% csrf_token %} {{ register_form|crispy }}
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div> 
+
+{% endcomment %}
+
+
+{% endblock extend_body %}
+
+{% block extend_footer %}
+    <script src="{% static 'js/users/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/users/main.js' %}"></script>
+{% endblock extend_footer %}
+
+

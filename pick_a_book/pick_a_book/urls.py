@@ -23,8 +23,11 @@ urlpatterns = [
     path('', include('main.urls', namespace='main')),
     path('user/', include('users.urls', namespace='users')),
     path('blog/', include('blog.urls', namespace='blog')),
+    path('library/', include('library.urls', namespace='library')),
     path('posts/', include('posts.urls', namespace='posts')),
     path('admin/', admin.site.urls, name='admin'),
+    path('api/', include('users.urls_api')),
+    path('froala_editor/', include('froala_editor.urls')),
 ]
 
 if settings.DEBUG:

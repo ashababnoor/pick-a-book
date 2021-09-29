@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+    <form method="post">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" required><br><br>
+        <lebel for="">Catagory</lebel>
+        <select name="catagory" id="catagory">
+        {% for cat in excatagory%}
+            <option value="{{ cat.catagory }}">{{ cat.catagory }}</option>
+        {% endfor %}
+        </select>
+    </form>
+</body>
+</html>

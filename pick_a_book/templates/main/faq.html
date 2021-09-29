@@ -1,0 +1,71 @@
+{% extends 'base-guest.html' %}
+
+{% load static %}
+
+{% block extend_head %}
+   
+{% endblock extend_head %}
+
+{% block extend_body %}
+
+<div class="sell-posts__container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="">
+        <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn text-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. What is Pick-a-Book?
+                        </button>
+                    </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        A peer-to-peer marketplace for buying, selling, renting and trading used books. Here users can post about their used books which they are interested in selling, renting or exchanging. 
+                        <br><br>
+                        This will enable others users to get their hands on their favorite books and book collections. Moreover, users passionate about books can write blogs about their favorite books and stories on this platform. There will also be a functionality which will allow the users to find nearby libraries in their area
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn text-dark collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. What is the motivation behind this project?
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        We all have lots of used books in our home which aren’t useful to us anymore. Whereas the same book might be useful to someone else. But there is no dedicated platform for book enthusiasts to share their old used books with someone else and spread the joy of reading books. 
+                        <br> <br>
+                        With that thought in mind we came up with Pick-a-Book, a peer-to-peer marketplace for people to sell, buy, rent and exchange used books. But not only that, they can also discuss about anything book related on our platform. Overall Pick-a-Book is a platform for bibliophiles and those who want to spread the love of reading books.
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn text-dark collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. How can I contact you?
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut beatae, eaque provident ex iure, numquam nemo, blanditiis dolorem repellendus ea dolor. Quaerat similique doloribus, et delectus quam explicabo recusandae laboriosam praesentium nesciunt cupiditate optio nulla facere aliquid dolores harum, saepe possimus accusamus corrupti sit amet sint nihil enim alias. Incidunt veniam odio placeat illo harum provident iusto accusantium necessitatibus maiores!
+                    </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock extend_body %}
+

@@ -37,7 +37,7 @@
 
 {% block extend_footer %}
 
-<script src="{% static 'js/users/jquery-3.6.0.min.js' %}" ></script>
+{% comment %} <script src="{% static 'js/users/jquery-3.6.0.min.js' %}" ></script> {% endcomment %}
 <script>
     $('.coordinates').click(function (){
         if (navigator.geolocation) {
@@ -57,15 +57,22 @@
                     },
                     success: function(data) {
                             $(".librarylist").html(data);
-                    }
+                    },
                 });
             },
             function(error) {
                 if (error.code == error.PERMISSION_DENIED)
                     console.log("you denied me location access");
-                $(".librarylist").html("<p>Allow location access to see nearby libraries. Go to <code>Settings</code> > <code>Site Settings</code> > <code>Locations</code> to give location access to the website</p>");
+                $(".librarylist").html(
+                    `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> You didn't allow location access! <br>
+                        <p>Allow location access to see nearby libraries. Go to <code>Settings</code> > <code>Site Settings</code> > <code>Locations</code> to give location access to the website</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>`
+                );
             });
-
         } else {
             alert("Geolocation is not supported by this browser.");
         }

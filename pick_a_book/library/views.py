@@ -21,14 +21,17 @@ def location_processing(request):
     context={
         "libraries":[]
     }
-    # currentcoordinate=(request.POST["la"],request.POST["lo"])
+
+    # currentcoordinate=(request.POST["la"], request.POST["lo"])
     currentcoordinate = (23.73816324407049, 90.39035984882445)
-    maxdis=request.POST["dist"]
+    maxdis = request.POST.get("dist")
+
     for lib in Library.objects.all():
-        libcoordinate=(lib.latitude,lib.longitude)
-        print(f'{lib.latitude},{lib.longitude},{lib.id}')
-        if distance.distance(currentcoordinate,libcoordinate).km <= float(maxdis):
+        libcoordinate = (lib.latitude, lib.longitude)
+        print(f'{lib.latitude}, {lib.longitude}, {lib.id}')
+        if distance.distance(currentcoordinate, libcoordinate).km <= float(maxdis):
             context["libraries"].append(lib)
+
     return render(request, 'library/listLibraries.html', context)
 
 

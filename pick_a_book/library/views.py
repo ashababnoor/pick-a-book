@@ -23,7 +23,7 @@ def location_processing(request):
     }
     # currentcoordinate=(request.POST["la"],request.POST["lo"])
     currentcoordinate = (23.73816324407049, 90.39035984882445)
-    maxdis=request.POST["dis"]
+    maxdis=request.POST["dist"]
     for lib in Library.objects.all():
         libcoordinate=(lib.latitude,lib.longitude)
         print(f'{lib.latitude},{lib.longitude},{lib.id}')

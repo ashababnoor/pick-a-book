@@ -1,12 +1,16 @@
-<table>
-    <tr>
-        <th>Library Name</th>
-        <th></th>
-    </tr>
-    {% for lib in libraries %}
-    <tr>
-        <td>{{ lib.name }}</td>
-        <td><a href="{% url 'library:library_details' id=lib.id %}">Visit Page</a></td>
-    </tr>
-    {% endfor %}
+<table class="table library-table">
+    <thead>
+        <tr>
+            <th>Library Name(s)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lib in libraries %}
+            <tr>
+                <td>{{ lib.name }}</td>
+                <td><a class="float-right gradient-link" href="{% url 'library:library_details' id=lib.id %}">Visit Page</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>

@@ -37,4 +37,4 @@ def location_processing(request):
 
 def libraryDetails(request,id):
     temp=Library.objects.filter(id=id)
-    return render(request, 'library/library.html',context={"library":temp})
+    return render(request, 'library/library.html', context={"library":temp})

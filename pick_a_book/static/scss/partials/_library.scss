@@ -1,3 +1,18 @@
 .library-container {
     @include main-section;
 }
+
+.library-table {
+    width: 100%;
+    margin-block: 2em;
+
+    thead {
+        background: #444;
+        color: white;
+        font-size: 1.1em;
+    }
+
+    tr{
+        margin: 1em 0;
+    }
+}

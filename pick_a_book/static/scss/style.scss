@@ -29,9 +29,64 @@
     @include gradient-background($deg: 45deg);
     color: white;
     overflow: hidden;
-    padding: 0.3em 1.1em;
+    //padding: 0.3em 1.1em;
+
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        @include gradient-text;
+        font-weight: bold;
+        border-image-source: $primary-gradient;
+        border-image-slice: 1;
+        border-image-width: 2.5px;
+        border-image-outset: 0em;
+    }
+}
+
+.btn-outline-gradient {
+    text-decoration: none;
+    @include gradient-text;
+    font-weight: bold;
+    border: none;
+    border-image-source: $primary-gradient;
+    border-image-slice: 1;
+    border-image-width: 2.5px;
+    border-image-outset: 0em;
+
+    &:hover {
+        @include gradient-background($deg: 45deg);
+        color: white;
+        overflow: hidden;
+        text-decoration: none;
+        border: none;
+        border-image: none;
+    }
+}
+
+.gradient-link {
+    @include gradient-text;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+
+    &:hover {
+        -webkit-background-clip: border-box;
+                background-clip: border-box;
+        color: white;
+        text-decoration: none;
+    }
 }
 
 .card-columns {
    column-count: 3;
+}
+
+code {
+    em {
+        background: #e5e5e5;
+        border-radius: 5px;
+        padding: 0.25em 0.4em;
+    }
 }

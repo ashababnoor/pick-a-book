@@ -6,6 +6,13 @@
     );
 }
 
+@mixin gradient-text {
+    @include gradient-background;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent  ;
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;

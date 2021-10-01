@@ -363,6 +363,21 @@
   min-height: 90vh;
 }
 
+.library-table {
+  width: 100%;
+  margin-block: 2em;
+}
+
+.library-table thead {
+  background: #444;
+  color: white;
+  font-size: 1.1em;
+}
+
+.library-table tr {
+  margin: 1em 0;
+}
+
 .section-title {
   font-size: 2em;
   font-weight: bold;
@@ -379,10 +394,73 @@
   background-image: linear-gradient(45deg, #007BFF, #6610F2);
   color: white;
   overflow: hidden;
-  padding: 0.3em 1.1em;
+  text-decoration: none;
+}
+
+.btn-gradient:hover {
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(#007BFF), to(#6610F2));
+  background-image: linear-gradient(90deg, #007BFF, #6610F2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  border-image-source: linear-gradient(90deg, #007BFF, #6610F2);
+  border-image-slice: 1;
+  border-image-width: 2.5px;
+  border-image-outset: 0em;
+}
+
+.btn-outline-gradient {
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(#007BFF), to(#6610F2));
+  background-image: linear-gradient(90deg, #007BFF, #6610F2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  border: none;
+  border-image-source: linear-gradient(90deg, #007BFF, #6610F2);
+  border-image-slice: 1;
+  border-image-width: 2.5px;
+  border-image-outset: 0em;
+}
+
+.btn-outline-gradient:hover {
+  background-image: linear-gradient(45deg, #007BFF, #6610F2);
+  color: white;
+  overflow: hidden;
+  text-decoration: none;
+  border: none;
+  -o-border-image: none;
+     border-image: none;
+}
+
+.gradient-link {
+  background-image: -webkit-gradient(linear, left top, right top, from(#007BFF), to(#6610F2));
+  background-image: linear-gradient(90deg, #007BFF, #6610F2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+}
+
+.gradient-link:hover {
+  background-clip: border-box;
+  color: white;
+  text-decoration: none;
 }
 
 .card-columns {
   -webkit-column-count: 3;
           column-count: 3;
+}
+
+code em {
+  background: #e5e5e5;
+  border-radius: 5px;
+  padding: 0.25em 0.4em;
 }

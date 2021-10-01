@@ -23,3 +23,9 @@ A peer-to-peer buying, selling and exchanging platform for old used books.
 
 #### Available Books Page
 # ![Pick-a-Book - Available Books.](resources/books.jpg)
+
+#### Library Search Page
+# ![Pick-a-Book - Library Search.](resources/library.jpg)
+
+#### Library Details Page
+# ![Pick-a-Book - Library Details.](resources/library-details.jpg)

@@ -1,0 +1,51 @@
+{% extends 'base-guest.html' %}
+
+{% load static %}
+
+{% block extend_head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock extend_head %}
+
+{% block extend_body %}
+
+<section class="home">
+    <div class="admin-confirm-container home__search-container">
+        <div>
+            <div class="title">
+                <h1 class="gradient-text">
+                    Are you an admin?
+                </h1>
+            </div>
+
+            <div class="buttons">
+                <div class="yes-btn">
+                    <a href="{% url 'admin:index' %}" class=""> Yes, I am </a>
+                </div>
+                <div class="no-btn">
+                    <a href="{% url 'main:about' %}" class=""> Nope <small>(Go back)</small> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} <section class="main-section admin-confirm-container">
+    <div>
+        <div class="title">
+            <h1 class="gradient-text">
+                Are you an admin?
+            </h1>
+        </div>
+
+        <div class="buttons">
+            <div class="yes-btn">
+                <a href="{% url 'admin:index' %}" class="btn btn-outline-success"> Yes, I am </a>
+            </div>
+            <div class="no-btn">
+                <a href="{% url 'main:about' %}" class="btn btn-danger"> Nope <small>(Go back)</small> </a>
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+{% endblock extend_body %}

@@ -1,0 +1,69 @@
+.admin-confirm-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+
+        .title {
+            h1 {
+                display: block;
+                font-size: 4.5em;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 5em;
+
+            a {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                border-radius: 5px;
+                padding: 0.3em 1em;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .yes-btn {
+            flex-grow: 1;
+            
+            a {
+                color: $clr-bs-success-pop;
+                border: 3px solid $clr-bs-success-pop;
+
+                &:hover {
+                    color: white;
+                    background: $clr-bs-success-pop;
+                }
+            }
+        }
+
+        .no-btn {
+            flex-grow: 1;
+
+            a {
+                color: white;
+                background: $clr-bs-danger-pop;
+                border: 3px solid $clr-bs-danger-pop;
+
+                &:hover {
+                    color: white;
+                    background: darken($color: $clr-bs-danger-pop, $amount: 10%);
+                    border: 3px solid darken($color: $clr-bs-danger-pop, $amount: 10%);
+                }
+            }
+        }
+    }
+}

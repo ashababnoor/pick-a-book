@@ -8,10 +8,15 @@
 @import './partials/sellposts';
 @import './partials/postdetails';
 
+@import './partials/admin';
 @import './partials/signup';
 @import './partials/library';
 
 
+
+.main-section {
+    @include main-section;
+}
 
 .section-title {
     font-size: 2em;
@@ -77,6 +82,10 @@
         color: white;
         text-decoration: none;
     }
+}
+
+.gradient-text {
+    @include gradient-text;
 }
 
 .card-columns {

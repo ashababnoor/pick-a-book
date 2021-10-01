@@ -18,3 +18,8 @@ def faq(request):
     context = {}
 
     return render(request, 'main/faq.html', context)
+
+def adminConfirm(request):
+    context = {}
+
+    return render(request, 'main/adminConfirm.html', context)

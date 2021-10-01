@@ -10,3 +10,6 @@ class Library(models.Model):
     longitude=models.FloatField()
     latitude=models.FloatField()
 
+    def __str__(self):
+        return "Title: " + self.name
+
